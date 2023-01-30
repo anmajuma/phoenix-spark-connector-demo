@@ -2,6 +2,7 @@
 
 echo ">>> Starting HBase <<<"
 /dist/hbase-2.5.2/bin/start-hbase.sh
+sleep 30
 echo ">>> HBase started successfully <<<"
 
 echo ">>> Create INDIA_POPULATION Phoenix Table"

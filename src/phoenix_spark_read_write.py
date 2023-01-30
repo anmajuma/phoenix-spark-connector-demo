@@ -1,6 +1,5 @@
 from pyspark import Row
 from pyspark.sql.types import LongType, StringType, StructField, StructType
-from pyspark_utils import PySparkApp
 
 # Create a SparkSession.
 ss = SparkSession.builder.appName("phoenix-read-write").getOrCreate()
@@ -28,10 +27,11 @@ df.write.format("phoenix").option("table", "india_population").option("zkUrl", "
 
 # Read data from Phoenix Table and store it in a DataFrame.
 df = ss.read.format("phoenix").option("table", "india_population").option("zkUrl", "localhost:2181").load()
+df.show()
 
 # Data filtering approach - 1
 df.filter((df.CITY == "Mumbai") | (df.STATE == "West Bengal")).show()
 
 # Data filtering approach - 2
 df.createOrReplaceTempView("india_population_temp")
-df = ss.sql("SELECT * FROM india_population_temp WHERE CITY='Mumbai' OR STATE='West Bengal'")
+ss.sql("SELECT * FROM india_population_temp WHERE CITY='Mumbai' OR STATE='West Bengal'").show()
