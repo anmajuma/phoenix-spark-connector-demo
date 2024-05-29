@@ -10,7 +10,7 @@ RUN wget -O /dist/hbase-2.5.2-bin.tar.gz  https://dlcdn.apache.org/hbase/2.5.2/h
 RUN tar xzvf /dist/hbase-2.5.2-bin.tar.gz  -C /dist/
 RUN rm -rf /dist/hbase-2.5.2-bin.tar.gz
 
-RUN wget -O /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz https://dlcdn.apache.org/phoenix/phoenix-5.1.3/phoenix-hbase-2.5-5.1.3-bin.tar.gz
+RUN wget -O /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz https://archive.apache.org/dist/hbase/2.5.2/hbase-2.5.2-bin.tar.gz
 RUN tar xzvf /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz -C /dist/
 RUN rm -rf /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz
 RUN cp /dist/phoenix-hbase-2.5-5.1.3-bin/phoenix-server-hbase-2.5-5.1.3.jar /dist/hbase-2.5.2/lib/phoenix-server-hbase-2.5-5.1.3.jar
@@ -20,7 +20,7 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-arm64" >> /dist/hbase
 RUN echo "JRE_HOME=/usr/lib/jvm/java-1.8.0-openjdk-arm64" >> /dist/hbase-2.5.2/conf/hbase-env.sh
 RUN echo "export HBASE_MANAGES_ZK=true" >> /dist/hbase-2.5.2/conf/hbase-env.sh
 
-RUN wget -O /dist/spark-3.3.1-bin-hadoop3.tgz https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
+RUN wget -O /dist/spark-3.3.1-bin-hadoop3.tgz https://archive.apache.org/dist/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
 RUN tar xzvf /dist/spark-3.3.1-bin-hadoop3.tgz -C /dist/
 RUN rm -rf /dist/spark-3.3.1-bin-hadoop3.tgz
 
