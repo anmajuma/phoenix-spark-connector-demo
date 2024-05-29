@@ -6,11 +6,11 @@ RUN apt-get install -y python-is-python3 python3-pip
 
 RUN mkdir /dist
 
-RUN wget -O /dist/hbase-2.5.2-bin.tar.gz  https://dlcdn.apache.org/hbase/2.5.2/hbase-2.5.2-bin.tar.gz
+RUN wget -O /dist/hbase-2.5.2-bin.tar.gz  https://archive.apache.org/dist/hbase/2.5.2/hbase-2.5.2-bin.tar.gz
 RUN tar xzvf /dist/hbase-2.5.2-bin.tar.gz  -C /dist/
 RUN rm -rf /dist/hbase-2.5.2-bin.tar.gz
 
-RUN wget -O /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz https://archive.apache.org/dist/hbase/2.5.2/hbase-2.5.2-bin.tar.gz
+RUN wget -O /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz https://dlcdn.apache.org/phoenix/phoenix-5.1.3/phoenix-hbase-2.5-5.1.3-bin.tar.gz
 RUN tar xzvf /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz -C /dist/
 RUN rm -rf /dist/phoenix-hbase-2.5-5.1.3-bin.tar.gz
 RUN cp /dist/phoenix-hbase-2.5-5.1.3-bin/phoenix-server-hbase-2.5-5.1.3.jar /dist/hbase-2.5.2/lib/phoenix-server-hbase-2.5-5.1.3.jar
